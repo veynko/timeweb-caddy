@@ -32,11 +32,10 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 
 // UnmarshalCaddyfile sets up the DNS provider from Caddyfile tokens. Syntax:
 //
-// timeweb [<api_token>] {
-//     api_token <api_token>
-//     api_url <timeweb_domain>
-// }
-//
+//	timeweb [<api_token>] {
+//	    api_token <api_token>
+//	    api_url <timeweb_domain>
+//	}
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	for d.Next() {
 		if d.NextArg() {
@@ -77,6 +76,11 @@ func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	if p.Provider.ApiToken == "" {
 		return d.Err("missing API token")
 	}
+
+	if p.Provider.ApiURL == "" {
+		p.Provider.ApiURL = "https://api.timeweb.cloud/api/v1"
+	}
+
 	return nil
 }
 
@@ -85,4 +89,3 @@ var (
 	_ caddyfile.Unmarshaler = (*Provider)(nil)
 	_ caddy.Provisioner     = (*Provider)(nil)
 )
-
