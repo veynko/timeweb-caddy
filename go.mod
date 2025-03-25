@@ -2,6 +2,8 @@ module github.com/veynko/timeweb-caddy
 
 go 1.24.1
 
+replace github.com/libdns/timeweb v1.0.1 => ../timeweb
+
 require (
 	github.com/caddyserver/caddy/v2 v2.9.1
 	github.com/libdns/timeweb v1.0.1
@@ -17,7 +19,7 @@ require (
 	github.com/google/pprof v0.0.0-20231212022811-ec68065c825e // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
-	github.com/libdns/libdns v0.2.2 // indirect
+	github.com/libdns/libdns v0.2.3 // indirect
 	github.com/mholt/acmez/v3 v3.0.0 // indirect
 	github.com/miekg/dns v1.1.62 // indirect
 	github.com/onsi/ginkgo/v2 v2.13.2 // indirect
