@@ -2,11 +2,9 @@ module github.com/veynko/timeweb-caddy
 
 go 1.24.1
 
-replace github.com/libdns/timeweb v1.0.1 => ../timeweb
-
 require (
 	github.com/caddyserver/caddy/v2 v2.9.1
-	github.com/libdns/timeweb v1.0.1
+	github.com/libdns/timeweb v1.0.2
 )
 
 require (
